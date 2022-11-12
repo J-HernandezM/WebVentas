@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create password</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
         <style>
@@ -49,7 +49,7 @@
                 
                 display: none;
                 width: 150px;
-                margin-bottom:48px;
+                margin-bottom:55px;
                 
 
             }
@@ -64,10 +64,15 @@
                 text-align: center;
 
                 margin-top: 0;
-                margin-bottom: 42px;
 
                 font-size: var(--lg);
                 color:var(--very-light-pink)
+            }
+            .form__text{
+                font-size: var(--sm);
+                text-decoration: none;
+                
+                color: var(--hospital-green);
             }
             .label{
                 margin-bottom: 6px;
@@ -102,36 +107,56 @@
                 font-family: 'Quicksand', sans-serif;
                 font-size: var(--lg);
                 font-weight: bold;
+                color: var(--white);
 
                 background-color: var(--hospital-green);
                 border-radius: 8px;
                 border: none;
-                color: var(--white);
             }
             .loginButton{
-                margin-top: 35px;
+                margin-top: 42px;
                 margin-bottom: 30px;
+            }
+            .btnSecondary{
+                width: 100%;
+                height: 50px;
+                cursor: pointer;
+
+                font-family: 'Quicksand', sans-serif;
+                font-size: var(--lg);
+                font-weight: bold;
+                color: var(--hospital-green);
+
+                background-color: var(--white);
+                border: 1px var(--hospital-green) solid;
+                border-radius: 8px;
+            }
+            .signButton{
+                margin: 60px auto 26px;
             }
 
             @media (max-width:640px){
                 .logo{
                     display:block;
                 }
+                .signButton{
+                    margin-top: 154px;
+                }
             }
         </style>
-    </head>
+</head>
 <body>
     <main class="login">
         <div class="form-container">
-            <img src="./assets/Logos/logo_yard_sale.svg" class="logo" alt="logo">
-            <h1 class="form__title">Create a new password</h1>
-            <p class="form__subtitle">Enter a new password for your account</p>
-            <form action="/" class="form">
-                <label for="new-password" class="label">Password</label>
-                <input id="new-password" type="password" placeholder="********" class="input inputPassword" required>
-                <label for="new-password" class="label">Re-enter your password</label>
-                <input id="new-password" type="password" placeholder="********" class="input inputPassword" required>
-                <input type="submit" value="Confirm" class="btn btnPrimary loginButton">
+            <img src="./assets/Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <form class="form">
+                <label for="email" class="label label__email">Email address</label>
+                <input class="input input__email" type="email" name="email" id="email" placeholder="camilayokoo@gmail.com">
+                <label for="password" class="label label__password">Password</label>
+                <input type="password" class="input label__password" name="password" id="password" placeholder="********">
+                <button class="btnPrimary loginButton">Log in</button>
+                <a href="#" class="form__subtitle form__text">Forgot my password</a>
+                <button class="btnSecondary signButton">Sign up</button>
             </form>
         </div>
     </main>
