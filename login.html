@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
         <style>
             /* CREACIÓN DE VARIABLES */
             :root{
@@ -37,6 +37,7 @@
 
                 display: grid;
                 place-items: center;
+                position: relative;
             }
             .form-container{
                 width: 339px;
@@ -140,7 +141,9 @@
                     display:block;
                 }
                 .signButton{
-                    margin-top: 154px;
+                    position: absolute;
+                    width: 339px;
+                    bottom: 12px;
                 }
             }
         </style>
@@ -151,7 +154,7 @@
             <img src="./assets/Logos/logo_yard_sale.svg" alt="logo" class="logo">
             <form class="form">
                 <label for="email" class="label label__email">Email address</label>
-                <input class="input input__email" type="email" name="email" id="email" placeholder="camilayokoo@gmail.com">
+                <input class="input input__email" type="email" name="email" id="email" placeholder="Insert your e-mail">
                 <label for="password" class="label label__password">Password</label>
                 <input type="password" class="input label__password" name="password" id="password" placeholder="********">
                 <button class="btnPrimary loginButton">Log in</button>
