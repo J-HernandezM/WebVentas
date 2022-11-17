@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>my order</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./assets/Logos/favicon_bota_fora.svg" type="img">
+        <style>
+            :root{
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark:#232830;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+            font-size:62.5%;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .layout{
+            display: grid;
+            place-items: center;
+
+            width: 100%;
+            height: 100vh;
+        }
+        .mainContainer{
+            min-width: 40.5rem;
+            max-width: 90rem;
+            margin: 0px auto 0px auto;
+        }
+        .mainTitle{
+            margin-left: .8rem;
+            font-size: var(--lg);
+            font-weight: bold;
+        }
+        .subtitle{
+            font-size: var(--md);
+            font-weight: bold;
+        }
+        .text{
+            font-size: var(--sm);
+        }
+        .mainContainer__orderInfo{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1.6rem 1.8rem;
+            margin: 4.7rem 0 2.4rem 0;
+
+            background-color: var(--text-input-field);
+            border-radius: 1rem;
+        }
+        .orderCard{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 2rem;
+        }
+        .orderCard__left{
+            display: flex;
+            align-items: center;
+            width: 80%;
+        }
+        .orderCard__img{
+            width: 7.6rem;
+            height: 7.6rem;
+
+            border-radius: 20px;
+        }
+        .orderCard__description{
+            margin-left: 1.7rem;
+        }
+        @media (max-width:640px){
+            .mainContainer{
+                min-width: 33.9rem;
+            }
+            .mainTitle{
+                display:none;
+            }
+            .layout{
+                display: grid;
+                place-items: start center;
+            }
+            .mainContainer__orderInfo{
+                margin-top: 1.7rem;
+            }
+        }
+        </style>
+</head>
+<body>
+    <section class="layout">
+        <main class="mainContainer">
+            <p class="mainTitle">My order</p>
+            <div class="mainContainer__orders">
+                <div class="mainContainer__orderInfo">
+                    <span class="orderInfo__left">
+                        <p class="subtitle">04.25.2021</p>
+                        <p class="text">6 articles</p>
+                    </span>
+                    <span class="subtitle orderInfo__right">$ 560.00</span>
+                </div>
+                <div class="mainContainer__orderCards">
+                    <div class="orderCard">
+                        <div class="orderCard__left">
+                            <img src="./assets/pkm-cards.jpg" alt="juegos pkm" class="orderCard__img">
+                            <span class="text orderCard__description">Pokemon games</span>
+                        </div>
+                        <span class="subtitle orderCard__price">$ 120,00</span>
+                    </div>
+                    <div class="orderCard">
+                        <div class="orderCard__left">
+                            <img src="./assets/pkm-cards.jpg" alt="juegos pkm" class="orderCard__img">
+                            <span class="text orderCard__description">Pokemon games</span>
+                        </div>
+                        <span class="subtitle orderCard__price">$ 120,00</span>
+                    </div>
+                    <div class="orderCard">
+                        <div class="orderCard__left">
+                            <img src="./assets/pkm-cards.jpg" alt="juegos pkm" class="orderCard__img">
+                            <span class="text orderCard__description">Pokemon games</span>
+                        </div>
+                        <span class="subtitle orderCard__price">$ 120,00</span>
+                    </div>
+                    <div class="orderCard">
+                        <div class="orderCard__left">
+                            <img src="./assets/pkm-cards.jpg" alt="juegos pkm" class="orderCard__img">
+                            <span class="text orderCard__description">Pokemon games</span>
+                        </div>
+                        <span class="subtitle orderCard__price">$ 120,00</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+</html>
