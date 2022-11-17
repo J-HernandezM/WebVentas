@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>shopping cart</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./assets/Logos/favicon_bota_fora.svg" type="img">
+        <style>
+            :root{
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark:#232830;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+            font-size:62.5%;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .shoppingCart{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position:absolute;
+            right: 0rem;
+
+            min-width: 38.5rem;
+            height: 100vh;
+        }
+        .shoppingCart__top{
+            height: 75%;
+        }
+        .shoppingCart__bottom{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            height: 25%;
+        }
+        .shoppingCart__total{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 0 auto 1.8rem auto;
+            width: 85%;
+            height: 35%;
+            padding: 1.8rem;
+
+            border-radius: .8rem;
+            background-color: var(--text-input-field);
+        }
+        .shoppingCart__title{
+            display: flex;
+            align-items: center;
+
+            height: 7rem;
+            margin-left:2.6rem;
+        }
+        .shoppingCart__itemList{
+            height: 80%;
+            margin-top: 1.5rem;
+
+            /* agregar scrollbar pero ocultar su estilo */
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* ocultar scrollbar en otros navegadores */
+        .shoppingCart__itemList::-webkit-scrollbar{
+            display: none;
+        }
+        .shoppingCart__btnPrimary{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 85%;
+                height: 50px;
+                margin: 0 auto 2.4rem auto;
+                cursor: pointer;
+
+                font-family: 'Quicksand', sans-serif;
+                font-size: var(--lg);
+                font-weight: bold;
+
+                background-color: var(--hospital-green);
+                border-radius: 8px;
+                border: none;
+                color: var(--white);
+        }
+        .itemCard{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1.5rem;
+        }
+        .itemCard--left{
+            display: flex;
+            align-items: center;
+        }
+        .cardImage{
+            width: 7.7rem;
+            height: 7.7rem;
+            margin-right: 1.7rem;
+
+            border-radius: 2rem;
+        }
+        .itemCard--right .close{
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: 0rem 0rem 0rem 1.8rem;
+        }
+        .titleIcon{
+            width:1.6rem;
+            margin-right: 2.4rem;
+        }
+        .cartText{
+            font-weight: bold;
+            font-size: var(--md);
+        }
+        .cardTitle{
+            font-size: var(--sm);
+            font-weight: 500;
+            color: var(--very-light-pink);
+        }
+        .title{
+            font-size: var(--lg);
+        }
+        @media(max-width:640px){
+            .shoppingCart__title{
+                display: none;
+            }
+            .shoppingCart{
+                position:static;
+                min-width: 35rem;
+                width: 100vw;
+            }
+        }
+
+        </style>
+</head>
+<body>
+    <aside class="shoppingCart">
+        <div class="shoppingCart__top">
+            <div class="shoppingCart__title">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/left-arrow.png" class="titleIcon" alt="back arrow">
+                <span class="cartText title">Shopping cart</span>
+            </div>
+            <div class="shoppingCart__itemList">
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                <div class="itemCard">
+                    <div class="itemCard--left">
+                        <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                        <span class="cartText cardTitle">Pokemon games</span>
+                    </div>
+                    <div class="itemCard--right">
+                        <span class="cartText cardPrice">$ 120,00</span>
+                        <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="shoppingCart__bottom">
+            <div class="shoppingCart__total">
+                <p class="cartText totalText">Total</p>
+                <p class="cartText totalPrice">$ 560.00</p>
+            </div>
+            <button class="shoppingCart__btnPrimary" type="submit">Checkout</button>
+        </div>
+    </aside>
+</body>
+</html>
