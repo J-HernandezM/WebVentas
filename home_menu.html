@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>home menu</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./assets/Logos/favicon_bota_fora.svg" type="img">
+        <style>
+            :root{
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #F7F7F7;
+            --hospital-green: #ACD9B2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --dark:#232830;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+            font-size:62.5%;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .userMenu{
+            width: 15.3rem;
+            height: auto;
+
+            text-align: end;
+
+            border: 1px var(--very-light-pink) solid;
+            padding: 2.5rem 2.5rem 0rem 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 1px 1px 1px var(--very-light-pink);
+        }
+        .userMenu__element{
+            margin-bottom: 3rem;
+
+            font-size: var(--md);
+            font-weight: bold;
+
+            list-style: none;
+        }
+        .userMenu__anchor{
+            text-decoration: none;
+            color: black;
+        }
+        .userMenu__element:last-child a{
+            font-size: var(--sm);
+            color: var(--hospital-green);
+        }
+        .userMenu__element:last-child{
+            border-top: 1px var(--very-light-pink) solid;
+            padding-top: 2rem;
+            margin-bottom: 2.6rem;
+        }
+        </style>
+</head>
+<body>
+    <div class="userMenu">
+        <ul class="userMenu__list">
+            <li class="userMenu__element"><a href="/" class="userMenu__anchor">My orders</a></li>
+            <li class="userMenu__element"><a href="/" class="userMenu__anchor">My account</a></li>
+            <li class="userMenu__element"><a href="/" class="userMenu__anchor">Sign out</a></li>
+        </ul>
+    </div>
+</body>
+</html>
