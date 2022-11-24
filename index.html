@@ -17,8 +17,27 @@
 <body>
     <header>
         <nav class="navBar">
+            <div class="mobileMenu inactive">
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor listTitle">CATEGORIES</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">All</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Clothes</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Electronics</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Furnitures</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Toys</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Others</a></li>
+                </ul>
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">My orders</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">My account</a></li>
+                </ul>
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><p class="mobileMenu__anchor email">example@email.com.co</p></li>
+                    <li class="mobileMenu__element signOut">Sign out<a href="/" class="mobileMenu__anchor"></a></li>
+                </ul>
+            </div>
             <div class="navBar__left">
-                <img src="./assets/Icons/icon_menu.svg" class="navBar__img menu" alt="menu">
+                <img src="./assets/Icons/icon_menu.svg" class="navBar__img menuHamIcon" alt="menu">
                 <img src="./assets/Logos/logo_yard_sale.svg" alt="" class="navBar__img logo">
                 <ul class="navBar__list">
                     <li class="navBar__element"><a href="/" class="navBar__anchor">All</a></li>
@@ -31,7 +50,7 @@
             </div>
             <div class="navBar__right">
                 <span><p class="navBar__email">example@email.com.co</p></span>
-                <img class="navBar__img cart" src="./assets/Icons/icon_shopping_cart_notification.svg">
+                <img class="navBar__img navBar__cart" src="./assets/Icons/icon_shopping_cart_notification.svg">
             </div>
             <div class="userMenu inactive">
                 <ul class="userMenu__list">
@@ -42,6 +61,126 @@
             </div>
         </nav>
     </header>
+    <main>
+        <aside class="shoppingCart inactive">
+            <div class="shoppingCart__top">
+                <div class="shoppingCart__title">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/left-arrow.png" class="titleIcon" alt="back arrow">
+                    <span class="cartText title">Shopping cart</span>
+                </div>
+                <div class="shoppingCart__itemList">
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="shoppingCart__bottom">
+                <div class="shoppingCart__total">
+                    <p class="cartText totalText">Total</p>
+                    <p class="cartText totalPrice">$ 560.00</p>
+                </div>
+                <button class="shoppingCart__btnPrimary" type="submit">Checkout</button>
+            </div>
+        </aside>
+    </main>
     <script src="./main.js"></script>
 </body>
 </html>
