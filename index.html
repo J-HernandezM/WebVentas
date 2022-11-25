@@ -4,130 +4,198 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>YARD SALE PROJECT INDEX</title>
+        <title>YARD SALE: cositas geek</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="./assets/Logos/favicon_bota_fora.svg" type="img">
+        <link rel="stylesheet" href="./styles.css">
         <style>
-            :root{
-            --very-light-pink: #C7C7C7;
-            --text-input-field: #F7F7F7;
-            --hospital-green: #ACD9B2;
-            --white: #FFFFFF;
-            --black: #000000;
-            --dark:#232830;
-            --sm: 1.4rem;
-            --md: 1.6rem;
-            --lg: 1.8rem;
-            font-size:62.5%;
-        }
-        *{
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 0px;
-        }
-        body {
-            font-family: 'Quicksand', sans-serif;
-        }
-        .mainContainer{
-            display: grid;
-            place-items: center;
-
-            width: 100%;
-            height: 100vh;
-        }
-        .mainContainer__sub{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            max-width: 38.5rem;
-            margin: 0 auto;
-            padding: 3rem;
-
-            border: 1px var(--very-light-pink) solid;
-            border-radius: 2rem;
-            background-color: var(--text-input-field);
-
-        }
-        .mainContainer__title{
-            margin-bottom: 2rem;
-            font-size: 4rem;
-        }
-        .mainContainer__text{
-            font-size: var(--md);
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        .mainContainer__buttons{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, 160px);
-            gap:0px;
-
-            width: 100%;
-        }
-        .primaryBtn{
-            width: 153px;
-            padding: .8rem;
-            margin: .4rem;
-
-            border: 1px transparent solid;
-            background-color: var(--hospital-green);
-            border-radius: 1rem;
-        }
-        .primaryBtn:hover{
-            background-color: #9ac29f;
-            cursor: pointer;
-        }
-        .link, .repo{
-            text-decoration: none;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: bold;
-        }
-        .repo{
-            color: var(--hospital-green);
-        }
-        .repo:hover{
-            color: #9ac29f;
-        }
-        .link{
-            color: var(--white);
-        }
-        @media (max-width:640px) {
-            .primaryBtn{
-                width: 10rem;
-            }
-            .mainContainer__buttons{
-                grid-template-columns: repeat(auto-fill, 10.4rem);
-            }
-        }
+            
         </style>
 </head>
 <body>
-    <main class="mainContainer">
-        <div class="mainContainer__sub">
-            <h1 class="mainContainer__title">YARD SALE</h1>
-            <p class="mainContainer__text"> A continuación encontrarás las diferentes pantallas creadas webpage de ventas online, por ahora solamente se encuentran los estilos y maquetación de los componentes, pero eventualmente se agregará toda la funcionalidad a la página para unir cada elemento usando REACT</p>
-            <p class="mainContainer__text">Para ver el repositorio y toda su descripción entra al siguiente <a href="https://github.com/J-HernandezM/WebVentas" class="repo">enlace</a></p>
-            <p class="mainContainer__text">Para ver mis demás proyectos entra mi <a href="https://j-hernandezm.github.io" class="repo">github pages</a></p>
-            <div class="mainContainer__buttons">
-                <button class="primaryBtn"><a href="./home1.html" class="link" target="_blank">HOMEPAGE</a></button>
-                <button class="primaryBtn"><a href="./create_account.html" class="link" target="_blank">CREAR CUENTA</a></button>
-                <button class="primaryBtn"><a href="./login.html" class="link" target="_blank">LOG IN</a></button>
-                <button class="primaryBtn"><a href="./my_account.html" class="link" target="_blank">DATOS CUENTA</a></button>
-                <button class="primaryBtn"><a href="./my_order.html" class="link" target="_blank">DATOS ORDEN</a></button>
-                <button class="primaryBtn"><a href="./my_orders.html" class="link" target="_blank">DATOS ORDENES</a></button>
-                <button class="primaryBtn"><a href="./new_password.html" class="link" target="_blank">CREAR CONTRASEÑA</a></button>
-                <button class="primaryBtn"><a href="./password_recovery2.html" class="link" target="_blank">EMAIL ENVIADO</a></button>
-                <button class="primaryBtn"><a href="./product_details.html" class="link" target="_blank">ASIDE PRODUCTO</a></button>
-                <button class="primaryBtn"><a href="./shopping_cart1.html" class="link" target="_blank">ASIDE CARRITO</a></button>
-                <button class="primaryBtn"><a href="./navbar.html" class="link" target="_blank">NAVBAR</a></button>
-                <button class="primaryBtn"><a href="./home_menu.html" class="link" target="_blank">ELEMENTO MENU</a></button>
-                <button class="primaryBtn"><a href="./menu2.html" class="link" target="_blank">MENU MOBILE</a></button>
+    <header>
+        <nav class="navBar">
+            <div class="mobileMenu inactive">
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor listTitle">CATEGORIES</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">All</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Clothes</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Electronics</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Furnitures</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Toys</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">Others</a></li>
+                </ul>
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">My orders</a></li>
+                    <li class="mobileMenu__element"><a href="/" class="mobileMenu__anchor">My account</a></li>
+                </ul>
+                <ul class="mobileMenu__list">
+                    <li class="mobileMenu__element"><p class="mobileMenu__anchor email">example@email.com.co</p></li>
+                    <li class="mobileMenu__element signOut">Sign out<a href="/" class="mobileMenu__anchor"></a></li>
+                </ul>
+            </div>
+            <div class="navBar__left">
+                <img src="./assets/Icons/icon_menu.svg" class="navBar__img menuHamIcon" alt="menu">
+                <img src="./assets/Logos/logo_yard_sale.svg" alt="" class="navBar__img logo">
+                <ul class="navBar__list">
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">All</a></li>
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">Clothes</a></li>
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">Electronics</a></li>
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">Furniture</a></li>
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">Toys</a></li>
+                    <li class="navBar__element"><a href="/" class="navBar__anchor">Others</a></li>
+                </ul>
+            </div>
+            <div class="navBar__right">
+                <span><p class="navBar__email">example@email.com.co</p></span>
+                <img class="navBar__img navBar__cart" src="./assets/Icons/icon_shopping_cart_notification.svg">
+            </div>
+            <div class="userMenu inactive">
+                <ul class="userMenu__list">
+                    <li class="userMenu__element"><a href="/" class="userMenu__anchor">My orders</a></li>
+                    <li class="userMenu__element"><a href="/" class="userMenu__anchor">My account</a></li>
+                    <li class="userMenu__element"><a href="/" class="userMenu__anchor">Sign out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search product">
+            <p>
+                <span>Order:</span>
+                <select class="selectbtn">
+                    <option value="recent">Most recent</option>
+                    <option value="viewed">Most viewed</option>
+                    <option value="selled">Most selled</option>
+                </select>
+            </p>
         </div>
+        <div class="cards-container">
+        </div>
+    
 
-        </div>
+        <aside class="shoppingCart inactive">
+            <div class="shoppingCart__top">
+                <div class="shoppingCart__title">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-90/left-arrow.png" class="titleIcon" alt="back arrow">
+                    <span class="cartText title">Shopping cart</span>
+                </div>
+                <div class="shoppingCart__itemList">
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    <div class="itemCard">
+                        <div class="itemCard--left">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="cardImage">
+                            <span class="cartText cardTitle">Pokemon games</span>
+                        </div>
+                        <div class="itemCard--right">
+                            <span class="cartText cardPrice">$ 120,00</span>
+                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="shoppingCart__bottom">
+                <div class="shoppingCart__total">
+                    <p class="cartText totalText">Total</p>
+                    <p class="cartText totalPrice">$ 560.00</p>
+                </div>
+                <button class="shoppingCart__btnPrimary" type="submit">Checkout</button>
+            </div>
+        </aside>
     </main>
+    <script src="./main.js"></script>
 </body>
 </html>
