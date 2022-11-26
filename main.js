@@ -8,6 +8,8 @@ const asideCart= document.querySelector(".shoppingCart");
 const asideProduct= document.querySelector(".productDetail");
 const asideCloseBtn=document.querySelector(".productDetail__icon");
 
+
+//Creación de clase y objetos
 const productList=[]
 class Products{
     constructor(productName, productImage , productPrice, productID){
@@ -42,6 +44,7 @@ productList.push(productGameYellow);
 productList.push(productPkmFigures);
 productList.push(productPkmLamp);
 
+//Lógica convivencia componentes, abrir y cerrar
 userEmail.addEventListener("click", function(){toggleElement(menuEmailDesk)});
 mobileBurguer.addEventListener("click", function(){
         const isAsideProductDetailClosed=asideProduct.classList.contains("inactive");
@@ -72,11 +75,7 @@ cartIcon.addEventListener("click", function(){
     })
 asideCloseBtn.addEventListener("click", closeDetail)
 
-function productDetailEventListeners(objectArray){
-    objectArray.forEach((object) =>{
-         object.addEventListener("click", openDetail);
-        })
-}
+
 function openDetail(){
     const isMenuMobileClosed=menuHamMobile.classList.contains("inactive");
     const isAsideCartClosed=asideCart.classList.contains("inactive");
@@ -88,6 +87,7 @@ function openDetail(){
         menuHamMobile.classList.add("inactive")
         asideProduct.classList.remove("inactive")
     }
+    /* renderProductDetail() */
 }
 function closeDetail(){
     asideProduct.classList.add("inactive")
@@ -96,6 +96,7 @@ function toggleElement(element) {
     element.classList.toggle("inactive");
 }
 
+//Lógica crear productos dinámicamente y añadirles su escuchador
 let productsObject;
 renderProducts(productList);
 function renderProducts(array){
@@ -120,4 +121,25 @@ function renderProducts(array){
     productsObject=document.querySelectorAll(".product-img");
     productDetailEventListeners(productsObject);
 }
-
+function productDetailEventListeners(objectArray){
+    objectArray.forEach((object) =>{
+         object.addEventListener("click", openDetail);
+        })
+}
+/* function renderProductDetail(){
+    let detailStructure= `<div class="layoutBottom">
+                            <img src="./assets/Icons/icon_close.png" alt="close" class="productDetail__icon close">
+                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="productDetail__itemImage">
+                            <div class="productDetail__pointContainer">
+                                <div class="productDetail__points"></div>
+                                <div class="productDetail__points"></div>
+                                <div class="productDetail__points"></div>
+                            </div>
+                            <div class="productDetail__productInfo">
+                                <p class="productDetail__itemPrice sampleText">$ 120,00</p>
+                                <p class="productDetail__itemTitle sampleText">Pokemon games</p>
+                                <p class="productDetail__itemDescription sampleText">Cartuchos para GameBoy color de los reconocidos juegos de la primera generación de pokémon. Contiene pokemon rojo, azul y amarillo. Revive una clásica aventura. Compatible con Nintendo Switch.</p>
+                            </div>
+                        </div>
+                        <button class="productDetail__btnPrimary" type="submit"><img src="./assets/Icons/bt_add_to_cart.svg" alt="cart" class="productDetail__icon cart"><span>Add to cart</span></button>`
+    asideProduct.innerHTML+=detailStructure }*/
