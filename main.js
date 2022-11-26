@@ -69,28 +69,3 @@ function renderProducts(array){
         }
     }
 }
-
-{/* <div class="product-card">
-                    <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="product-img">
-                    <div class="product-info">
-                        <div class="product-texts">
-                            <p class="text price">$ 120,00</p>
-                            <p class="text pdctname">Pokemon games</p>
-                        </div>
-                        <figure>
-                            <img src="./assets/Icons/bt_add_to_cart.svg" alt="add to cart" class="card-logo">
-                        </figure>
-                    </div>
-            </div>
-            <div class="product-card">
-                    <img src="./assets/pkm-headphones.jpg" alt="pokemon games" class="product-img">
-                    <div class="product-info">
-                        <div class="product-texts">
-                            <p class="text price">$ 300,00</p>
-                            <p class="text pdctname">Togepi airpods</p>
-                        </div>
-                        <figure>
-                            <img src="./assets/Icons/bt_add_to_cart.svg" alt="add to cart" class="card-logo">
-                        </figure>
-                    </div>
-            </div> */}
