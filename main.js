@@ -6,7 +6,7 @@ const menuEmailDesk= document.querySelector(".userMenu");
 const menuHamMobile= document.querySelector(".mobileMenu");
 const asideCart= document.querySelector(".shoppingCart");
 const asideProduct= document.querySelector(".productDetail");
-const asideCloseBtn=document.querySelector(".productDetail__icon");
+let asideCloseBtn
 
 
 //Creación de clase y objetos
@@ -64,33 +64,16 @@ cartIcon.addEventListener("click", function(){
 
         if(isAsideProductDetailClosed && isMenuMobileClosed ){
             toggleElement(asideCart);
-            console.log(1)
         }
         else{
             asideProduct.classList.add("inactive");
             menuHamMobile.classList.add("inactive");
             toggleElement(asideCart);
-            console.log(2)
         }
     })
-asideCloseBtn.addEventListener("click", closeDetail)
-
-
-function openDetail(){
-    const isMenuMobileClosed=menuHamMobile.classList.contains("inactive");
-    const isAsideCartClosed=asideCart.classList.contains("inactive");
-    if(isAsideCartClosed && isMenuMobileClosed){
-    asideProduct.classList.remove("inactive");
-    }
-    else{
-        asideCart.classList.add("inactive")
-        menuHamMobile.classList.add("inactive")
-        asideProduct.classList.remove("inactive")
-    }
-    /* renderProductDetail() */
-}
 function closeDetail(){
     asideProduct.classList.add("inactive")
+    console.log("a")
 }
 function toggleElement(element) {
     element.classList.toggle("inactive");
@@ -122,24 +105,46 @@ function renderProducts(array){
     productDetailEventListeners(productsObject);
 }
 function productDetailEventListeners(objectArray){
-    objectArray.forEach((object) =>{
-         object.addEventListener("click", openDetail);
-        })
+            //LÓGICA ENCONTRAR EL PRODUCTO CLICKADO
+            objectArray.forEach((object) =>{
+                 object.addEventListener("click", (selectedProduct)=>{
+                    let idSelectedProduct=selectedProduct.target.id
+                    let objectSelected
+                    productList.find((product)=>
+                                        {if(product.id==idSelectedProduct){
+                                            objectSelected=product}})
+                    console.log(objectSelected)
+                    //LÓGICA INTRODUCIR EL HTML DEL PRODUCTO CLICADO
+                    let detailStructure= `<div class="layoutBottom">
+                                            <img src="./assets/Icons/icon_close.png" alt="close" class="productDetail__icon close">
+                                            <img src="${objectSelected.image}" alt="pokemon games" class="productDetail__itemImage">
+                                            <div class="productDetail__pointContainer">
+                                                <div class="productDetail__points"></div>
+                                                <div class="productDetail__points"></div>
+                                                <div class="productDetail__points"></div>
+                                            </div>
+                                            <div class="productDetail__productInfo">
+                                                <p class="productDetail__itemPrice sampleText">$ ${objectSelected.price},00</p>
+                                                <p class="productDetail__itemTitle sampleText">${objectSelected.name}</p>
+                                                <p class="productDetail__itemDescription sampleText">Cartuchos para GameBoy color de los reconocidos juegos de la primera generación de pokémon. Contiene pokemon rojo, azul y amarillo. Revive una clásica aventura. Compatible con Nintendo Switch.</p>
+                                            </div>
+                                        </div>
+                                        <button class="productDetail__btnPrimary" type="submit"><img src="./assets/Icons/bt_add_to_cart.svg" alt="cart" class="productDetail__icon cart"><span>Add to cart</span></button>`
+                    asideProduct.innerHTML=detailStructure;
+                    asideCloseBtn=document.querySelector(".productDetail__icon");
+                    asideCloseBtn.addEventListener("click", closeDetail);
+                    //LÓGICA CONVIVENCIA CON OTROS COMPONENTES
+                    const isMenuMobileClosed=menuHamMobile.classList.contains("inactive");
+                    const isAsideCartClosed=asideCart.classList.contains("inactive");
+                    if(isAsideCartClosed && isMenuMobileClosed){
+                        asideProduct.classList.remove("inactive");
+                    }
+                    else{
+                        asideCart.classList.add("inactive");
+                        menuHamMobile.classList.add("inactive");
+
+                        asideProduct.classList.remove("inactive");
+                    }
+                    });
+            })
 }
-/* function renderProductDetail(){
-    let detailStructure= `<div class="layoutBottom">
-                            <img src="./assets/Icons/icon_close.png" alt="close" class="productDetail__icon close">
-                            <img src="./assets/pkm-cards.jpg" alt="pokemon games" class="productDetail__itemImage">
-                            <div class="productDetail__pointContainer">
-                                <div class="productDetail__points"></div>
-                                <div class="productDetail__points"></div>
-                                <div class="productDetail__points"></div>
-                            </div>
-                            <div class="productDetail__productInfo">
-                                <p class="productDetail__itemPrice sampleText">$ 120,00</p>
-                                <p class="productDetail__itemTitle sampleText">Pokemon games</p>
-                                <p class="productDetail__itemDescription sampleText">Cartuchos para GameBoy color de los reconocidos juegos de la primera generación de pokémon. Contiene pokemon rojo, azul y amarillo. Revive una clásica aventura. Compatible con Nintendo Switch.</p>
-                            </div>
-                        </div>
-                        <button class="productDetail__btnPrimary" type="submit"><img src="./assets/Icons/bt_add_to_cart.svg" alt="cart" class="productDetail__icon cart"><span>Add to cart</span></button>`
-    asideProduct.innerHTML+=detailStructure }*/
