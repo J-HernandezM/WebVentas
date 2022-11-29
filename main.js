@@ -6,8 +6,10 @@ const menuEmailDesk= document.querySelector(".userMenu");
 const menuHamMobile= document.querySelector(".mobileMenu");
 const asideCart= document.querySelector(".shoppingCart");
 const asideProduct= document.querySelector(".productDetail");
+const cartItemList= document.querySelector(".shoppingCart__itemList")
 let asideCloseBtn
-
+let addToCartBtnRound
+let addToCartBtnDetail
 
 //Creación de clase y objetos
 const productList=[]
@@ -73,7 +75,6 @@ cartIcon.addEventListener("click", function(){
     })
 function closeDetail(){
     asideProduct.classList.add("inactive")
-    console.log("a")
 }
 function toggleElement(element) {
     element.classList.toggle("inactive");
@@ -94,15 +95,17 @@ function renderProducts(array){
                                                     <p class="text pdctname">${product.name}</p>
                                                 </div>
                                                 <figure>
-                                                    <img src="./assets/Icons/bt_add_to_cart.svg" alt="add to cart" class="card-logo">
+                                                    <img src="./assets/Icons/bt_add_to_cart.svg" alt="add to cart" class="card-logo" id="cart-${product.id}">
                                                 </figure>
                                             </div>
                                         </div>`
             cardsContainter.innerHTML+=productCardStructure;
         }
     }
+    addToCartBtnRound=document.querySelectorAll(".card-logo");
     productsObject=document.querySelectorAll(".product-img");
     productDetailEventListeners(productsObject);
+    addToCartRoundEventListeners(addToCartBtnRound);
 }
 function productDetailEventListeners(objectArray){
             //LÓGICA ENCONTRAR EL PRODUCTO CLICKADO
@@ -147,4 +150,29 @@ function productDetailEventListeners(objectArray){
                     }
                     });
             })
+}
+function addToCartRoundEventListeners(btnArray){
+    btnArray.forEach((btn)=>{
+        btn.addEventListener("click", (selectedBtn)=>{
+            let idBtnSelected=selectedBtn.target.id
+            let objectSelectedFromBtn
+            productList.find((product)=>{
+                if(idBtnSelected==("cart-"+product.id)){
+                    btnObjectSelected=product
+                    console.log("Botón funciona")
+                }
+            })
+            let cartCardStructure=`<div class="itemCard">
+                                        <div class="itemCard--left">
+                                            <img src="${objectSelectedFromBtn.image}" alt="product" class="cardImage" id="${objectSelectedFromBtn.id}">
+                                            <span class="cartText cardTitle">${objectSelectedFromBtn.name}</span>
+                                        </div>
+                                        <div class="itemCard--right">
+                                            <span class="cartText cardPrice">$ ${objectSelectedFromBtn.price},00</span>
+                                            <img src="./assets/Icons/icon_close.png" class="titleIcon close" alt="remove form cart">
+                                        </div>
+                                    </div>`
+            cartItemList.innerHTML+=cartCardStructure
+        })
+    })
 }
